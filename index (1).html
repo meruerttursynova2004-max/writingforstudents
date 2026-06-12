@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Creative Writing Journey</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <section id="welcome" class="page active welcome-page">
+    <div class="decor decor-1"></div>
+    <div class="decor decor-2"></div>
+
+    <div class="welcome-text">
+      <p class="tag">English Writing Platform</p>
+      <h1>Creative Writing Journey</h1>
+      <p>Build vocabulary, play revision games, and become a confident English writer.</p>
+      <button class="primary-btn" onclick="showPage('home')">Start Learning</button>
+    </div>
+
+    <div class="teacher-scene">
+      <div class="teacher">
+        <div class="hair"></div>
+        <div class="face">
+          <span class="eye left"></span>
+          <span class="eye right"></span>
+          <span class="mouth"></span>
+        </div>
+        <div class="neck"></div>
+        <div class="body"></div>
+        <div class="arm arm-left"></div>
+        <div class="arm arm-right"></div>
+        <div class="book"></div>
+      </div>
+      <p>Welcome, future writer!</p>
+    </div>
+  </section>
+
+  <section id="home" class="page">
+    <header class="topbar">
+      <h2>Creative Writing Journey</h2>
+      <button class="small-btn" onclick="showPage('welcome')">Back</button>
+    </header>
+
+    <div class="section-title">
+      <h1>Choose your activity</h1>
+      <p>Vocabulary, creative writing, and useful tips in one place.</p>
+    </div>
+
+    <div class="main-grid">
+      <div class="big-card" onclick="showPage('vocabulary')">
+        <span>📚</span>
+        <h3>Vocabulary</h3>
+        <p>Study module words and meanings.</p>
+      </div>
+
+      <div class="big-card featured" onclick="showPage('creativeModules')">
+        <span>✍️</span>
+        <h3>Creative Writing</h3>
+        <p>Complete games and writing tasks.</p>
+      </div>
+
+      <div class="big-card" onclick="showPage('tips')">
+        <span>💡</span>
+        <h3>Tips</h3>
+        <p>Learn how to write better answers.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="vocabulary" class="page">
+    <header class="topbar">
+      <h2>Vocabulary Modules</h2>
+      <button class="small-btn" onclick="showPage('home')">Back</button>
+    </header>
+
+    <div class="module-grid" id="vocabModuleGrid"></div>
+  </section>
+
+  <section id="vocabContent" class="page">
+    <header class="topbar">
+      <h2 id="vocabTitle">Module Vocabulary</h2>
+      <button class="small-btn" onclick="showPage('vocabulary')">Back</button>
+    </header>
+
+    <div class="content-card" id="vocabContentBox"></div>
+  </section>
+
+  <section id="creativeModules" class="page">
+    <header class="topbar">
+      <h2>Creative Writing Modules</h2>
+      <button class="small-btn" onclick="showPage('home')">Back</button>
+    </header>
+
+    <div class="module-grid" id="writingModuleGrid"></div>
+  </section>
+
+  <section id="writingIntro" class="page">
+    <header class="topbar">
+      <h2 id="writingIntroTitle">Writing Module</h2>
+      <button class="small-btn" onclick="showPage('creativeModules')">Back</button>
+    </header>
+
+    <div class="content-card center-card">
+      <p class="tag">Module 5 Writing</p>
+      <h1>Resume Project</h1>
+      <p>Before writing your resume, complete two vocabulary revision games.</p>
+      <div class="steps">
+        <div>1. Multiple Choice Game <b>Pass: 4/5</b></div>
+        <div>2. True / False Game <b>Pass: 2/3</b></div>
+        <div>3. Resume Writing Task</div>
+      </div>
+      <button class="primary-btn" onclick="startMCQ()">Start Game</button>
+    </div>
+  </section>
+
+  <section id="mcqGame" class="page">
+    <header class="topbar">
+      <h2>Multiple Choice Game</h2>
+      <button class="small-btn" onclick="showPage('creativeModules')">Back</button>
+    </header>
+
+    <div class="game-card">
+      <div class="progress">
+        <div id="mcqProgress"></div>
+      </div>
+      <p class="game-info">You need 4 or 5 correct answers to continue.</p>
+      <h2 id="mcqQuestion"></h2>
+      <div id="mcqAnswers" class="answer-grid"></div>
+      <p id="mcqFeedback" class="feedback"></p>
+    </div>
+  </section>
+
+  <section id="tfGame" class="page">
+    <header class="topbar">
+      <h2>True / False Game</h2>
+      <button class="small-btn" onclick="showPage('creativeModules')">Back</button>
+    </header>
+
+    <div class="game-card">
+      <div class="progress">
+        <div id="tfProgress"></div>
+      </div>
+      <p class="game-info">You need 2 or 3 correct answers to continue.</p>
+      <h2 id="tfQuestion"></h2>
+      <div id="tfAnswers" class="answer-grid"></div>
+      <p id="tfFeedback" class="feedback"></p>
+    </div>
+  </section>
+
+  <section id="resumeTask" class="page">
+    <header class="topbar">
+      <h2>Creative Task: Resume</h2>
+      <button class="small-btn" onclick="showPage('creativeModules')">Back</button>
+    </header>
+
+    <form class="resume-form" action="https://formsubmit.co/meruert.tursynova2004@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="New Creative Writing Resume Task">
+      <input type="hidden" name="_captcha" value="false">
+
+      <div class="resume-paper">
+        <div class="avatar"></div>
+        <h1>RESUME</h1>
+
+        <label>Name:</label>
+        <input type="text" name="Student Name" required>
+
+        <label>Group:</label>
+        <input type="text" name="Group" required>
+
+        <label>Age:</label>
+        <input type="text" name="Age">
+
+        <label>Skills:</label>
+        <textarea name="Skills" required></textarea>
+
+        <label>Personality Traits:</label>
+        <textarea name="Personality Traits" required></textarea>
+
+        <label>Why should the company hire you?</label>
+        <textarea class="essay" name="Why should the company hire you?" required></textarea>
+      </div>
+
+      <div class="form-actions">
+        <button type="button" class="secondary-btn" onclick="showPage('writingIntro')">Vocabulary Revision</button>
+        <button type="submit" class="primary-btn">Submit</button>
+      </div>
+    </form>
+  </section>
+
+  <section id="tips" class="page">
+    <header class="topbar">
+      <h2>Writing Tips</h2>
+      <button class="small-btn" onclick="showPage('home')">Back</button>
+    </header>
+
+    <div class="tips-grid">
+      <div class="tip-card"><h3>Use new vocabulary</h3><p>Add 3–5 words from the module.</p></div>
+      <div class="tip-card"><h3>Write clearly</h3><p>Use short and complete sentences.</p></div>
+      <div class="tip-card"><h3>Add examples</h3><p>Examples make your answer stronger.</p></div>
+      <div class="tip-card"><h3>Check grammar</h3><p>Read your work before submitting.</p></div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
